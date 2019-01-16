@@ -22,7 +22,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.14</radius>
+            <radius>0.051</radius>
           </sphere>
         </geometry>
         <material>
@@ -46,7 +46,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.14</radius>
+            <radius>0.051</radius>
           </sphere>
         </geometry>
         <material>
@@ -70,7 +70,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.14</radius>
+            <radius>0.051</radius>
           </sphere>
         </geometry>
         <material>
@@ -94,7 +94,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.14</radius>
+            <radius>0.051</radius>
           </sphere>
         </geometry>
         <material>
