@@ -8,6 +8,9 @@
   <arg name="x" default="0.0"/>
   <arg name="y" default="0.0"/>
   <arg name="z" default="0.1"/>
+  <arg name="tx" default="1"/>
+  <arg name="ty" default="1"/>
+  <arg name="tz" default="1"/>
   <arg name="enable_logging" default="false"/>
   <arg name="enable_ground_truth" default="true"/>
   <arg name="log_file" default="$(arg mav_name)"/>
@@ -40,9 +43,9 @@
   <node name="spawn_target" pkg="gazebo_ros" type="spawn_model"
   args="-file $(find rotors_gazebo)/models/target/model.sdf
         -sdf
-        -x 1
-        -y 1
-        -z 1
+        -x $(arg tx)
+        -y $(arg ty)
+        -z $(arg tz)
         -model target"
   respawn="false" output="screen">
   </node>
