@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
       nh.advertise<trajectory_msgs::MultiDOFJointTrajectory>(
           mav_msgs::default_topics::COMMAND_TRAJECTORY, 10);
   ROS_INFO("Started position_step_node.");
-
+  nh_private.setParam("ready",0);
   std_srvs::Empty srv;
   bool unpaused = ros::service::call("/gazebo/unpause_physics", srv);
   unsigned int i = 0;
