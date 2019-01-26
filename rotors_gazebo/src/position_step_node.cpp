@@ -109,7 +109,7 @@ int main(int argc, char** argv) {
   ros::Duration(3.0).sleep();
   nh_private.setParam("ready",1);
 
-  ros::Subscriber sub = nh.subscribe<geometry_msgs::Vector3>("my_topic", 1, boost::bind(callback, boost::ref(nh),boost::ref(trajectory_pub),_1));
+  ros::Subscriber sub = nh.subscribe<geometry_msgs::Vector3>("desired_position", 1, boost::bind(callback, boost::ref(nh),boost::ref(trajectory_pub),_1));
   ros::spin();
   return 0;
 }
