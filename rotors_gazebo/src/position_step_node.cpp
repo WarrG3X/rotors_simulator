@@ -27,6 +27,29 @@
 #include <ros/ros.h>
 #include <std_srvs/Empty.h>
 #include <trajectory_msgs/MultiDOFJointTrajectory.h>
+#include <geometry_msgs/Vector3.h>
+#include <boost/bind.hpp>
+
+
+void callback(ros::NodeHandle &nh, ros::Publisher &trajectory_pub, const geometry_msgs::Vector3::ConstPtr& msg){
+
+  trajectory_msgs::MultiDOFJointTrajectory trajectory_msg;
+  trajectory_msg.header.stamp = ros::Time::now();
+
+  // Default desired position and yaw.
+  Eigen::Vector3d desired_position(msg->x,msg->y,msg->z);
+  double desired_yaw = 0.0;
+
+  mav_msgs::msgMultiDofJointTrajectoryFromPositionYaw(
+      desired_position, desired_yaw, &trajectory_msg);
+
+  ROS_INFO("Publishing waypoint on namespace %s: [%f, %f, %f].",
+           nh.getNamespace().c_str(), desired_position.x(),
+           desired_position.y(), desired_position.z());
+  trajectory_pub.publish(trajectory_msg);
+
+
+}
 
 int main(int argc, char** argv) {
   ros::init(argc, argv, "position_step_node");
@@ -38,6 +61,7 @@ int main(int argc, char** argv) {
           mav_msgs::default_topics::COMMAND_TRAJECTORY, 10);
   ROS_INFO("Started position_step_node.");
   nh_private.setParam("ready",0);
+
   std_srvs::Empty srv;
   bool unpaused = ros::service::call("/gazebo/unpause_physics", srv);
   unsigned int i = 0;
@@ -66,32 +90,28 @@ int main(int argc, char** argv) {
   // Default desired position and yaw.
   Eigen::Vector3d desired_position(0.0, 0.0, 1.0);
   double desired_yaw = 0.0;
-  Eigen::Vector3d current_position(0.0, 0.0, 0.0);
-  double current_yaw = 0.0;
 
-  while(true){
-    // Overwrite defaults if set as node parameters.
-    nh_private.param("x", desired_position.x(), desired_position.x());
-    nh_private.param("y", desired_position.y(), desired_position.y());
-    nh_private.param("z", desired_position.z(), desired_position.z());
-    nh_private.param("yaw", desired_yaw, desired_yaw);
+  // Overwrite defaults if set as node parameters.
+  nh_private.param("x", desired_position.x(), desired_position.x());
+  nh_private.param("y", desired_position.y(), desired_position.y());
+  nh_private.param("z", desired_position.z(), desired_position.z());
+  nh_private.param("yaw", desired_yaw, desired_yaw);
 
-    if(desired_position!=current_position){
-      mav_msgs::msgMultiDofJointTrajectoryFromPositionYaw(
-          desired_position, desired_yaw, &trajectory_msg);
+  mav_msgs::msgMultiDofJointTrajectoryFromPositionYaw(
+      desired_position, desired_yaw, &trajectory_msg);
 
-      ROS_INFO("Publishing waypoint on namespace %s: [%f, %f, %f].",
-              nh.getNamespace().c_str(), desired_position.x(),
-              desired_position.y(), desired_position.z());
-      trajectory_pub.publish(trajectory_msg);
+  ROS_INFO("Publishing waypoint on namespace %s: [%f, %f, %f].",
+           nh.getNamespace().c_str(), desired_position.x(),
+           desired_position.y(), desired_position.z());
+  trajectory_pub.publish(trajectory_msg);
 
-      current_position = desired_position;
-      current_yaw = desired_yaw;
-    }
-  }
 
-  ros::spinOnce();
-  ros::shutdown();
+  ros::Duration(3.0).sleep();
+  nh_private.setParam("ready",1);
 
+  ros::Subscriber sub = nh.subscribe<geometry_msgs::Vector3>("my_topic", 1, boost::bind(callback, boost::ref(nh),boost::ref(trajectory_pub),_1));
+  ros::spin();
   return 0;
 }
+
+
