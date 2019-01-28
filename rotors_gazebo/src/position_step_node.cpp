@@ -84,29 +84,6 @@ int main(int argc, char** argv) {
   // Wait for 5 seconds to let the Gazebo GUI show up.
   ros::Duration(5.0).sleep();
 
-  trajectory_msgs::MultiDOFJointTrajectory trajectory_msg;
-  trajectory_msg.header.stamp = ros::Time::now();
-
-  // Default desired position and yaw.
-  Eigen::Vector3d desired_position(0.0, 0.0, 1.0);
-  double desired_yaw = 0.0;
-
-  // Overwrite defaults if set as node parameters.
-  nh_private.param("x", desired_position.x(), desired_position.x());
-  nh_private.param("y", desired_position.y(), desired_position.y());
-  nh_private.param("z", desired_position.z(), desired_position.z());
-  nh_private.param("yaw", desired_yaw, desired_yaw);
-
-  mav_msgs::msgMultiDofJointTrajectoryFromPositionYaw(
-      desired_position, desired_yaw, &trajectory_msg);
-
-  ROS_INFO("Publishing waypoint on namespace %s: [%f, %f, %f].",
-           nh.getNamespace().c_str(), desired_position.x(),
-           desired_position.y(), desired_position.z());
-  trajectory_pub.publish(trajectory_msg);
-
-
-  ros::Duration(3.0).sleep();
   nh_private.setParam("ready",1);
 
   ros::Subscriber sub = nh.subscribe<geometry_msgs::Vector3>("desired_position", 1, boost::bind(callback, boost::ref(nh),boost::ref(trajectory_pub),_1));
