@@ -38,7 +38,7 @@
 
   <!-- Main multirotor link -->
   <xacro:macro name="multirotor_base_macro"
-    params="robot_namespace mass body_width body_height use_mesh_file mesh_file *inertia">
+    params="robot_namespace mass body_width collision_width collision_topic_name body_height use_mesh_file mesh_file *inertia">
     <link name="${robot_namespace}/base_link"></link>
 
     <joint name="${robot_namespace}/base_joint" type="fixed">
@@ -66,16 +66,30 @@
         </geometry>
       </visual>
 
-      <collision>
+      <collision name="collision">
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <box size="${body_width} ${body_width} ${body_height}" /> <!-- [m] [m] [m] -->
+          <box size="${collision_width} ${collision_width} ${body_height}" /> <!-- [m] [m] [m] -->
         </geometry>
       </collision>
     </link>
 
+    <!-- collision sensor for the base link -->
+    <gazebo reference="${robot_namespace}/base_link_inertia">
+      <sensor name='contact' type='contact'>
+        <plugin name='contact' filename='libcontact.so'>
+          <TopicName>${collision_topic_name}</TopicName>
+        </plugin>
+        <contact>
+          <collision>${robot_namespace}/base_link_fixed_joint_lump__collision_collision</collision>
+          <topic>/robot/isworking</topic>
+        </contact>
+      </sensor>
+    </gazebo>
+
+
     <!-- attach multirotor_base_plugin to the base_link -->
-    <gazebo>
+    <gazebo >
       <plugin filename="librotors_gazebo_multirotor_base_plugin.so" name="multirotor_base_plugin">
         <robotNamespace>${robot_namespace}</robotNamespace>
         <linkName>${robot_namespace}/base_link</linkName>
