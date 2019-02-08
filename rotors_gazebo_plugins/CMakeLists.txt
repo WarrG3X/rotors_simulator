@@ -266,6 +266,17 @@ if (NOT NO_ROS)
 endif()
 list(APPEND targets_to_install rotors_gazebo_imu_plugin)
 
+
+################## 7. A contact sensor plugin for the quadrotor ####################
+add_library( contact SHARED src/ContactPlugin.cpp )
+
+target_link_libraries( contact ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+
+if (NOT NO_ROS)
+  add_dependencies(contact ${catkin_EXPORTED_TARGETS})
+endif()
+list(APPEND targets_to_install contact)
+
 #======================================== LIDAR PLUGIN ==========================================//
 if(${gazebo_VERSION_MAJOR} GREATER 4)
   add_library(rotors_gazebo_lidar_plugin SHARED src/external/gazebo_lidar_plugin.cpp)

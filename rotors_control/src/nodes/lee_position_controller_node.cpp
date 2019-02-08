@@ -173,6 +173,7 @@ void LeePositionControllerNode::TimedCommandCallback(const ros::TimerEvent& e) {
 void LeePositionControllerNode::OdometryCallback(const nav_msgs::OdometryConstPtr& odometry_msg) {
 
   ROS_INFO_ONCE("LeePositionController got first odometry message.");
+  ROS_INFO("OdometryCallback in LeePostitinControllerNode");
 
   EigenOdometry odometry;
   eigenOdometryFromMsg(odometry_msg, &odometry);

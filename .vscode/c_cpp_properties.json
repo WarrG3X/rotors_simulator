@@ -1,0 +1,41 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/patrick/bebop_ws/devel/include",
+                "/home/patrick/newcatkinws/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/patrick/bebop_ws/src/geometry/eigen_conversions/include",
+                "/home/patrick/bebop_ws/src/geometry/kdl_conversions/include",
+                "/home/patrick/bebop_ws/src/mavros/libmavconn/include",
+                "/home/patrick/bebop_ws/src/mav_comm/mav_msgs/include",
+                "/home/patrick/bebop_ws/src/mav_comm/mav_planning_msgs/include",
+                "/home/patrick/bebop_ws/src/mavros/mavros/include",
+                "/home/patrick/bebop_ws/src/mavros/mavros_msgs/include",
+                "/home/patrick/bebop_ws/src/my_package/include",
+                "/home/patrick/bebop_ws/src/rotors_simulator/rotors_control/include",
+                "/home/patrick/bebop_ws/src/rotors_simulator/rotors_gazebo_plugins/include",
+                "/home/patrick/bebop_ws/src/rotors_simulator/rotors_joy_interface/include",
+                "/home/patrick/bebop_ws/src/mavros/test_mavros/include",
+                "/home/patrick/bebop_ws/src/geometry/tf/include",
+                "/home/patrick/bebop_ws/src/geometry2/tf2/include",
+                "/home/patrick/bebop_ws/src/geometry2/tf2_bullet/include",
+                "/home/patrick/bebop_ws/src/geometry2/tf2_eigen/include",
+                "/home/patrick/bebop_ws/src/geometry2/tf2_geometry_msgs/include",
+                "/home/patrick/bebop_ws/src/geometry2/tf2_kdl/include",
+                "/home/patrick/bebop_ws/src/geometry2/tf2_msgs/include",
+                "/home/patrick/bebop_ws/src/geometry2/tf2_ros/include",
+                "/home/patrick/bebop_ws/src/geometry2/tf2_sensor_msgs/include",
+                "/home/patrick/bebop_ws/src/geometry/tf_conversions/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}

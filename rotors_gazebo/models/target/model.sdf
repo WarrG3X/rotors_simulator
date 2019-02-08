@@ -2,6 +2,13 @@
 <sdf version='1.6'>
   <model name='target'>
     <link name='link_0'>
+      <!-- <collision name="target_collision">
+        <geometry>
+          <sphere>
+            <radius>0.051</radius>
+          </sphere>
+        </geometry>
+      </collision> -->
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
         <mass>0.1</mass>
