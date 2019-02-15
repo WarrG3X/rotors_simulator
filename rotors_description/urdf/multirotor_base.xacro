@@ -38,7 +38,7 @@
 
   <!-- Main multirotor link -->
   <xacro:macro name="multirotor_base_macro"
-    params="robot_namespace mass body_width collision_width collision_topic_name body_height use_mesh_file mesh_file *inertia">
+    params="robot_namespace mass body_width collision_width:='3.5' collision_topic_name:='/bebop2/base_link/collision_count' body_height use_mesh_file mesh_file *inertia">
     <link name="${robot_namespace}/base_link"></link>
 
     <joint name="${robot_namespace}/base_joint" type="fixed">

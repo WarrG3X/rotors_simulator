@@ -56,7 +56,7 @@ void ContactPlugin::Load(sensors::SensorPtr _sensor, sdf::ElementPtr _sdf)
   // Make sure the parent sensor is active.
   this->parentSensor->SetActive(true);
 
-  this->parentSensor->SetUpdateRate(10);
+  // this->parentSensor->SetUpdateRate(10);
   
 }
 
