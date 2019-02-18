@@ -9,7 +9,7 @@
   <arg name="paused" value="true"/>
   <arg name="x" default="0.0"/>
   <arg name="y" default="0.0"/>
-  <arg name="z" default="0.3"/>
+  <arg name="z" default="1.0"/>
   <arg name="tx" default="1"/>
   <arg name="ty" default="1"/>
   <arg name="tz" default="1"/>
