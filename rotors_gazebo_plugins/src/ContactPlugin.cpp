@@ -42,12 +42,12 @@ void ContactPlugin::Load(sensors::SensorPtr _sensor, sdf::ElementPtr _sdf)
 
   node_handle_ = new ros::NodeHandle("");
 
-  this->publisher_topic_name = _sdf->GetElement("TopicName")->GetValue()->GetAsString() ;
+  // // this->publisher_topic_name = _sdf->GetElement("TopicName")->GetValue()->GetAsString() ;
 
-  ROS_INFO("%s",this->publisher_topic_name.c_str());
+  // ROS_INFO("%s",this->publisher_topic_name.c_str());
 
-  // this->publisher_topic_name = "/bebop2/base_link/contact_sensor";
-  this->_publisher= this->node_handle_->advertise<std_msgs::Int16>(this->publisher_topic_name.c_str(), 2);
+  // // this->publisher_topic_name = "/bebop2/base_link/contact_sensor";
+  // this->_publisher= this->node_handle_->advertise<std_msgs::Int16>(this->publisher_topic_name.c_str(), 2);
 
   // Connect to the sensor update event.
   this->updateConnection = this->parentSensor->ConnectUpdated(
@@ -64,6 +64,15 @@ void ContactPlugin::Load(sensors::SensorPtr _sensor, sdf::ElementPtr _sdf)
 void ContactPlugin::OnUpdate()
 {
   std_msgs::Int16 message;
+  bool collision = false;
+
   message.data = this->parentSensor->Contacts().contact_size(); 
-  this->_publisher.publish(message);  
+
+  if(message.data >0)
+    collision = true;
+
+  if(collision == true)  
+    ros::param::set("/bebop2/lee_position_controller_node/collision",collision);
+  
+  // this->_publisher.publish(message);  
 }
