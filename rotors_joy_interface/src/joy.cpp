@@ -102,6 +102,7 @@ void Joy::JoyCallback(const sensor_msgs::JoyConstPtr& msg) {
   ros::Time update_time = ros::Time::now();
   control_msg_.header.stamp = update_time;
   control_msg_.header.frame_id = "rotors_joy_frame";
+  ROS_INFO("roll %f pitch %f yaw %f thrust %f",control_msg_.roll,control_msg_.pitch,control_msg_.yaw_rate,control_msg_.thrust.z);
   Publish();
 }
 
