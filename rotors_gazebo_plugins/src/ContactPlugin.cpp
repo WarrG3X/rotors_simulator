@@ -63,15 +63,49 @@ void ContactPlugin::Load(sensors::SensorPtr _sensor, sdf::ElementPtr _sdf)
 /////////////////////////////////////////////////
 void ContactPlugin::OnUpdate()
 {
-  std_msgs::Int16 message;
+
   bool collision = false;
+  bool targetreached = false;
+  int size = 0;
+  msgs::Contacts contacts;
 
-  message.data = this->parentSensor->Contacts().contact_size();
 
-  if(message.data >0)
-    collision = true;
+  contacts = this->parentSensor->Contacts();
+  size = contacts.contact_size();
+ 
+  for (unsigned int i = 0; i < size; ++i)
+  {
+      std::string s1 = contacts.contact(i).collision1();
+      // ROS_INFO("%s",s1.c_str());
+      if (s1.find("target") != std::string::npos)
+      {
+        targetreached = true;
+      }
+      else
+      {
+        collision = true;
+        targetreached = false;
+        break;
+      }
+  }
 
-  if(collision == true)  
-    ros::param::set("/bebop2/lee_position_controller_node/collision",collision);
+
+  if(size > 0 && !collision)
+    ros::param::set("/bebop2/targetreached",targetreached);
+
+  if(collision == true)
+    ros::param::set("/bebop2/collision",collision);
+
+
+  // std_msgs::Int16 message;
+  // bool collision = false;
+
+  // message.data = this->parentSensor->Contacts().contact_size();
+
+  // if(message.data >0)
+  //   collision = true;
+
+  // if(collision == true)  
+  //   ros::param::set("/bebop2/collision",collision);
 
 }
