@@ -71,7 +71,7 @@
     </model>
     <include>
       <uri>model://Circuit_main</uri>
-      <pose>0 0 0 0 0 1.567</pose>
+      <pose>0 0 0 0 0 0</pose>
     </include>
   </world>
 </sdf>
