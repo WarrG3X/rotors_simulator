@@ -38,6 +38,37 @@
       <real_time_update_rate>100</real_time_update_rate>
       <gravity>0 0 -9.8</gravity>
     </physics>
+    <model name="target">
+      <pose>2.0 3.0 1.5 0 0 0</pose>
+      <static>1</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+          <sphere>
+            <radius>0.051</radius>
+          </sphere>
+        </geometry>
+          <surface>
+            <contact>
+              <collide_without_contact>1</collide_without_contact>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <material> 
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 1 1 0</specular>
+            <emissive>0 1 0 1</emissive>
+          </material>
+          <geometry>
+          <sphere>
+            <radius>0.051</radius>
+          </sphere>
+        </geometry>
+        </visual>
+      </link>
+    </model>
     <model name='unit_cylinder_clone'>
       <static>1</static>
       <pose frame=''>0.717658 -1.91902 0.808215 3e-06 4e-06 -0</pose>
