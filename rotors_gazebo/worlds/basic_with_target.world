@@ -40,8 +40,9 @@
     </physics>
     <model name="target">
       <pose>0 3.0 3.0 0 0 0</pose>
-      <static>1</static>
+      <static>0</static>
       <link name="link">
+        <gravity>0</gravity>
         <collision name="collision">
           <geometry>
           <sphere>
