@@ -108,6 +108,7 @@
         </plugin>
       </sensor>
     </gazebo>
+   
   </xacro:macro>
 
   <!-- Macro to add the controller interface. -->

@@ -39,7 +39,7 @@
       <gravity>0 0 -9.8</gravity>
     </physics>
     <model name="target">
-      <pose>0 3.0 3.0 0 0 0</pose>
+      <pose>1.2 1.32 1.5 0 0 0</pose>
       <static>0</static>
       <link name="link">
         <gravity>0</gravity>
