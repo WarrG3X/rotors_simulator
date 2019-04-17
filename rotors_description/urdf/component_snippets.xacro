@@ -103,7 +103,7 @@
           <robotNamespace>${namespace}</robotNamespace>
           <cameraName>camera</cameraName>
           <alwaysOn>true</alwaysOn>
-          <updateRate>10</updateRate>
+          <update_rate>${frame_rate}</update_rate>
           <imageTopicName>rgb/image_raw</imageTopicName>
           <depthImageTopicName>depth/image_raw</depthImageTopicName>
           <pointCloudTopicName>depth/points</pointCloudTopicName>
