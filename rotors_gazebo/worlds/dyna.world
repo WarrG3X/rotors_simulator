@@ -137,10 +137,22 @@
   <model name='wall1'>
     <pose frame='world'>2 -1 0 0 -0 0</pose>
     <link name='Wall_5'>
+     <inertial>
+        <mass>1000</mass>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertia>
+          <ixx>522.708</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>961.667</iyy>
+          <iyz>0</iyz>
+          <izz>442.708</izz>
+        </inertia>
+      </inertial>
       <collision name='Wall_5_Collision'>
         <geometry>
           <box>
-            <size>2 0.15 2.5</size>
+            <size>2.2 0.15 2.5</size>
           </box>
         </geometry>
         <pose frame=''>0 0 1.25 0 -0 0</pose>
@@ -149,7 +161,7 @@
         <pose frame=''>0 0 1.25 0 -0 0</pose>
         <geometry>
           <box>
-            <size>2 0.15 2.5</size>
+            <size>2.2 0.15 2.5</size>
           </box>
         </geometry>
         <material>
@@ -165,15 +177,26 @@
       </visual>
       <pose frame=''>0 -0 0 0 -0 -1.5708</pose>
     </link>
-    <static>1</static>
   </model>
   <model name='wall2'>
     <pose frame='world'>4 1 0 0 -0 0</pose>
     <link name='Wall_5'>
+     <inertial>
+        <mass>1000</mass>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertia>
+          <ixx>522.708</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>961.667</iyy>
+          <iyz>0</iyz>
+          <izz>442.708</izz>
+        </inertia>
+      </inertial>
       <collision name='Wall_5_Collision'>
         <geometry>
           <box>
-            <size>2 0.15 2.5</size>
+            <size>2.3 0.15 2.5</size>
           </box>
         </geometry>
         <pose frame=''>0 0 1.25 0 -0 0</pose>
@@ -182,7 +205,7 @@
         <pose frame=''>0 0 1.25 0 -0 0</pose>
         <geometry>
           <box>
-            <size>2 0.15 2.5</size>
+            <size>2.3 0.15 2.5</size>
           </box>
         </geometry>
         <material>
@@ -198,15 +221,26 @@
       </visual>
       <pose frame=''>0 -0 0 0 -0 -1.5708</pose>
     </link>
-    <static>1</static>
   </model>
   <model name='wall3'>
-    <pose frame=''>7 -1 0 0 0 0</pose>
+    <pose frame=''>6 -1 0 0 0 0</pose>
     <link name='Wall_5'>
+     <inertial>
+        <mass>1000</mass>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertia>
+          <ixx>522.708</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>961.667</iyy>
+          <iyz>0</iyz>
+          <izz>442.708</izz>
+        </inertia>
+      </inertial>
       <collision name='Wall_5_Collision'>
         <geometry>
           <box>
-            <size>2 0.15 2.5</size>
+            <size>2.5 0.15 2.5</size>
           </box>
         </geometry>
         <pose frame=''>0 0 1.25 0 -0 0</pose>
@@ -215,7 +249,7 @@
         <pose frame=''>0 0 1.25 0 -0 0</pose>
         <geometry>
           <box>
-            <size>2 0.15 2.5</size>
+            <size>2.5 0.15 2.5</size>
           </box>
         </geometry>
         <material>
@@ -231,7 +265,6 @@
       </visual>
       <pose frame=''>0 -0 0 0 -0 -1.5708</pose>
     </link>
-    <static>1</static>
   </model>
     <model name='ground_plane'>
       <static>1</static>
