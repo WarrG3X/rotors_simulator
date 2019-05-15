@@ -101,22 +101,22 @@
         </camera>
          <plugin name="${namespace}_camera_{camera_suffix}" filename="libgazebo_ros_openni_kinect.so">
           <robotNamespace>${namespace}</robotNamespace>
-          <cameraName>camera</cameraName>
           <alwaysOn>true</alwaysOn>
-          <update_rate>${frame_rate}</update_rate>
+          <baseline>0.11</baseline>
+          <update_rate>0</update_rate>
+          <cameraName>camera</cameraName>
           <imageTopicName>rgb/image_raw</imageTopicName>
+          <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
           <depthImageTopicName>depth/image_raw</depthImageTopicName>
           <pointCloudTopicName>depth/points</pointCloudTopicName>
-          <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
           <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
           <frameName>camera_depth_optical_frame</frameName>
-          <baseline>0.11</baseline>
           <distortionK1>0.0</distortionK1>
           <distortionK2>0.0</distortionK2>
           <distortionK3>0.0</distortionK3>
           <distortionT1>0.0</distortionT1>
           <distortionT2>0.0</distortionT2>
-          <pointCloudCutoff>0.5</pointCloudCutoff>
+          <pointCloudCutoff>${min_distance}</pointCloudCutoff>
           <pointCloudCutoffMax>${max_distance}</pointCloudCutoffMax>
         </plugin>
         <!-- <plugin name="${namespace}_camera_{camera_suffix}" filename="libgazebo_ros_openni_kinect.so">
