@@ -31,7 +31,7 @@
             </contact>
           </surface>
         </collision>
-        <!-- <visual name="visual">
+        <visual name="visual">
           <material> 
             <ambient>0.1 0.1 0.1 1</ambient>
             <diffuse>0.1 0.1 0.2 1</diffuse>
@@ -43,7 +43,7 @@
             <radius>0.051</radius>
           </sphere>
         </geometry>
-        </visual> -->
+        </visual>
       </link>
     </model>
     <model name='ground_plane'>
