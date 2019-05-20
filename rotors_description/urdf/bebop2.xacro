@@ -8,8 +8,8 @@
   <xacro:property name="mesh_file" value="package://rotors_description/meshes/bebop2.dae" />
   <xacro:property name="mass" value="0.503" /> <!-- [kg] -->
   <xacro:property name="body_width" value="0.316618" /> <!-- [m] -->
-  <xacro:property name="collision_width" value="0.40" /> <!-- [m] -->
   <xacro:property name="collision_topic_name" value="/bebop2/base_link/collision_count" /> <!-- [m] -->
+  <xacro:property name="collision_width" value="0.40" /> <!-- [m] -->
   <xacro:property name="body_height" value="0.089582" /> <!-- [m] -->
   <xacro:property name="mass_rotor" value="0.001" /> <!-- [kg] -->
   <xacro:property name="arm_length" value="0.09" /> <!-- [m] -->
