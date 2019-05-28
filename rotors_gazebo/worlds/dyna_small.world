@@ -39,7 +39,6 @@
             </contact>
             <bounce/>
           </surface>
-          <max_contacts>10</max_contacts>
         </collision>
         <visual name='visual'>
           <cast_shadows>0</cast_shadows>
@@ -150,7 +149,6 @@
       </visual>
       <collision name='collision'>
         <laser_retro>0</laser_retro>
-        <max_contacts>10</max_contacts>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
@@ -247,7 +245,6 @@
       </visual>
       <collision name='collision'>
         <laser_retro>0</laser_retro>
-        <max_contacts>10</max_contacts>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
@@ -309,7 +306,6 @@
             </box>
           </geometry>
           <pose frame=''>0 0 1.25 0 -0 0</pose>
-          <max_contacts>10</max_contacts>
           <surface>
             <contact>
               <ode/>
@@ -354,7 +350,6 @@
             </box>
           </geometry>
           <pose frame=''>0 0 1.25 0 -0 0</pose>
-          <max_contacts>10</max_contacts>
           <surface>
             <contact>
               <ode/>
@@ -399,7 +394,6 @@
             </box>
           </geometry>
           <pose frame=''>0 0 1.25 0 -0 0</pose>
-          <max_contacts>10</max_contacts>
           <surface>
             <contact>
               <ode/>
@@ -444,7 +438,6 @@
             </box>
           </geometry>
           <pose frame=''>0 0 1.25 0 -0 0</pose>
-          <max_contacts>10</max_contacts>
           <surface>
             <contact>
               <ode/>
@@ -489,7 +482,6 @@
             </box>
           </geometry>
           <pose frame=''>0 0 1.25 0 -0 0</pose>
-          <max_contacts>10</max_contacts>
           <surface>
             <contact>
               <ode/>
@@ -534,7 +526,6 @@
             </box>
           </geometry>
           <pose frame=''>0 0 1.25 0 -0 0</pose>
-          <max_contacts>10</max_contacts>
           <surface>
             <contact>
               <ode/>
