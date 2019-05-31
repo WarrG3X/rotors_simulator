@@ -46,34 +46,6 @@
         </visual>
       </link>
     </model>
-    <model name="box">
-      <pose>1.5 0 0 0 0 0</pose>
-      <static>0</static>
-      <link name="link">
-      <gravity>0</gravity>
-        <collision name="collision">
-          <geometry>
-            <box>
-            <size>0.4 0.4 2</size>
-           </box>
-          </geometry>
-
-        </collision>
-        <visual name="visual">
-          <material> 
-            <ambient>0.1 0.1 0.1 1</ambient>
-            <diffuse>0.1 0.1 0.2 1</diffuse>
-            <specular>0 1 1 0</specular>
-            <emissive>0 1 0 1</emissive>
-          </material>
-          <geometry>
-            <box>
-            <size>0.4 0.4 2</size>
-           </box>
-          </geometry>
-        </visual>
-      </link>
-    </model>
     <model name='ground_plane'>
       <static>1</static>
       <link name='link'>
@@ -324,7 +296,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <link name='Wall_20'>
+      <!--<link name='Wall_20'>
         <collision name='Wall_20_Collision'>
           <geometry>
             <box>
@@ -488,7 +460,7 @@
           </contact>
         </surface>
       </collision>
-    </link>
+    </link>-->
     <link name='link_0_clone'>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
