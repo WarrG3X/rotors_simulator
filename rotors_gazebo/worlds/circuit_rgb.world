@@ -91,7 +91,7 @@
             </contact>
           </surface>
         </collision>
-        <!-- <visual name="visual">
+        <visual name="visual">
           <material> 
             <ambient>0.1 0.1 0.1 1</ambient>
             <diffuse>0.1 0.1 0.2 1</diffuse>
@@ -100,10 +100,10 @@
           </material>
           <geometry>
           <sphere>
-            <radius>0.051</radius>
+            <radius>0.005</radius>
           </sphere>
         </geometry>
-        </visual> -->
+        </visual> 
       </link>
     </model>
     <include>
