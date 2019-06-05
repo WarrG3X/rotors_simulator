@@ -217,6 +217,7 @@
       </light>
     </state>
     <model name='rectangle'>
+      <static>1</static>
       <link name='Floor_0'>
         <pose frame=''>-0.034458 0.025579 2.5 0 -0 0</pose>
         <inertial>
@@ -652,6 +653,7 @@
         </collision>
       </link>
       <model name='unit_cylinder'>
+      <static>1</static>
         <link name='link'>
           <pose frame=''>0 0 0 0 -0 0</pose>
           <inertial>
@@ -755,6 +757,7 @@
         <pose frame=''>-1.01975 0.631942 0.624728 0 -0 0</pose>
       </model>
       <model name='unit_cylinder_0'>
+      <static>1</static>
         <link name='link'>
           <pose frame=''>0 0 0 0 -0 0</pose>
           <inertial>
@@ -858,6 +861,7 @@
         <pose frame=''>-0.002672 -0.579285 0.178688 0 -0 0</pose>
       </model>
       <model name='wal.5'>
+      <static>1</static>
         <pose frame=''>0.95067 0.615814 0 0 -0 0</pose>
         <link name='Wall_13'>
           <collision name='Wall_13_Collision'>
@@ -906,6 +910,7 @@
         <static>1</static>
       </model>
       <model name='wal.5_0'>
+      <static>1</static>
         <pose frame=''>1.74547 -0.645175 0 0 -0 1.05606</pose>
         <link name='Wall_13'>
           <collision name='Wall_13_Collision'>
@@ -954,6 +959,7 @@
         <static>1</static>
       </model>
       <model name='wal.5_1'>
+      <static>1</static>
         <pose frame=''>-1.61559 -0.796746 0 0 0 -0.475164</pose>
         <link name='Wall_13'>
           <collision name='Wall_13_Collision'>
