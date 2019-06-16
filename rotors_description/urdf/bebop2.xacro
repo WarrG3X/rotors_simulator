@@ -3,7 +3,7 @@
 <robot name="bebop2" xmlns:xacro="http://ros.org/wiki/xacro">
   <!-- Properties -->
   <xacro:property name="namespace" value="$(arg namespace)" />
-  <xacro:property name="rotor_velocity_slowdown_sim" value="10" />
+  <xacro:property name="rotor_velocity_slowdown_sim" value="15" />
   <xacro:property name="use_mesh_file" value="true" />
   <xacro:property name="mesh_file" value="package://rotors_description/meshes/bebop2.dae" />
   <xacro:property name="mass" value="0.503" /> <!-- [kg] -->
@@ -145,7 +145,7 @@
       namespace="${namespace}"
       parent_link="${namespace}/base_link"
       camera_suffix="base"
-      frame_rate="15"
+      frame_rate="20"
       horizontal_fov="1.7"
       image_height="50"
       image_width="50"
